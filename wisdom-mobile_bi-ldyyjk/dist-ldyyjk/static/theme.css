@@ -1,0 +1,38 @@
+:root {
+  --wsd-theme-danger: #FF3B30;
+  --wsd-theme-warning: #FF9500;
+  --wsd-theme-success: #34C759;
+  --wsd-theme-infoyellow: #FFCC00;
+  --wsd-theme-infoteal: #5AC8FA;
+  --wsd-theme-infoindigo: #5856D6;
+  --wsd-theme-infopurple: #AF52DE;
+  --wsd-theme-infopink: #FF2D55;
+
+  --wsd-theme-graywhite: #ffffff;
+  --wsd-theme-grayedit: #F9F9FC;
+  --wsd-theme-graybg: #F4F5FA;
+  --wsd-theme-graytile: #ECEDF5;
+  --wsd-theme-grayline: #E1E3F0;
+
+  --wsd-theme-fontbasic: #4F5E7B;
+  --wsd-theme-fontdis: #8997B2;
+  --wsd-theme-fontdis2: #B8BBC8; 
+  --wsd-theme-fontinput: #3B7CC2;
+  --wsd-theme-fontdark: #334567;
+
+  --wsd-theme-bluebrand: #288FFF;
+  --wsd-theme-bluehover: #E5F3FF;
+  --wsd-theme-blueactive: #CDE8FF;
+  --wsd-theme-bluedark: #007AFF;
+
+  --wsd-theme-gblue1: #4B91F7;
+  --wsd-theme-gblue2: #367AF6;
+  --wsd-theme-ggray1: #B0BCCD;
+  --wsd-theme-ggray2: #A1AABC;
+
+  --wsd-theme-dark1: #EAEBEC; 
+  --wsd-theme-dark2: #898E97; 
+  --wsd-theme-dark3: #283142; 
+  --wsd-theme-dark4: #202735; 
+
+}

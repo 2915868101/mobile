@@ -1,0 +1,383 @@
+@marginValues: 0 1 2 3 4 5 6 7 8 9 10 12 13 15 20 25 30 35 40 50 60 70; //f-mt f-mr f-mb f-ml
+@paddingValues: 0 1 2 3 4 5 6 7 8 9 10 12 13 15 20 25 30 35 40 43 50 60 70; //f-pt f-pr f-pb f-pl
+@flexValues: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; //f-df
+@fontSizeValues: 9 10 11 12 13 14 15 16 17 18 20 22 23 24 25 26 28 30 36 38 40 42 100; //f-fs
+@textIndentValues: 1 2 3 4 5 6; //f-ti
+@fontColorValues: #fff #999 #7d888c #c0c4cc #83a2f8 #f00 #00f; //s-c
+@backgroundColorValues: #fff #f4f5fc #f4f9f9; //s-bgc
+@borderRadiusValues: 3 5 7 10 12 15 20; //f-br
+@borderRadiusPercentageValues: 50; //f-brp 百分比圆角
+@widthValues: 0 8 10 12 15 16 10 20 22 30 40 45 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250 260 270 280 290 300 350 360 400 450 500 550 600 800 900 1000 1100 1200; //g-w g-mw
+@widthPercentageValues: 5 10 20 30 40 50 60 70 80 90 100; //g-wp 百分比宽度
+@heightValues: 0 8 10 12 15 16 20 22 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250 260 270 280 290 300 400 450 500 550 600 650 700 750 800; //g-h g-mh
+@heightPercentageValues: 5 10 20 30 40 50 60 70 80 90 100; //g-hp g-mhp 百分比高度
+@lineHeightValues: 14 16 18 20 22 24 26 28 30 32 35 40; //f-lh
+@textShadowValues: '2px 2px 3px rgba(0, 0, 0, 0.25)', '2px 2px 5px rgba(0, 0, 0, 0.25)'; //f-ts
+@boxShadowValues: '0 8px 10px #00168b'; //f-bs
+@opacityValues: 0 30 40 50 60 70 80 85 90 95 100; //f-o
+@scaleValues: '0.5', '0.6', '0.7', '0.75', '0.8', '0.9', '1.2', '1.5', '2', '2.5', '3'; //f-scale
+@rotateValues: 45 90 180 -90 -45 -135; //f-rotate
+
+.margin-top (@string, @u: px) {
+  margin-top: unit(@string, @u);
+}
+
+.margin-right (@string, @u: px) {
+  margin-right: unit(@string, @u);
+}
+
+.margin-bottom (@string, @u: px) {
+  margin-bottom: unit(@string, @u);
+}
+
+.margin-left (@string, @u: px) {
+  margin-left: unit(@string, @u);
+}
+
+.margin-loop(@n: 1, @v: extract(@marginValues, @n)) when (@n <=length(@marginValues)) {
+  .f-mt@{v} {
+    .margin-top(extract(@marginValues, @n));
+  }
+
+  .f-mr@{v} {
+    .margin-right(extract(@marginValues, @n));
+  }
+
+  .f-mb@{v} {
+    .margin-bottom(extract(@marginValues, @n));
+  }
+
+  .f-ml@{v} {
+    .margin-left(extract(@marginValues, @n));
+  }
+
+  .margin-loop((@n + 1));
+}
+
+.margin-loop();
+
+.padding-top (@string, @u: px) {
+  padding-top: unit(@string, @u);
+}
+
+.padding-right (@string, @u: px) {
+  padding-right: unit(@string, @u);
+}
+
+.padding-bottom (@string, @u: px) {
+  padding-bottom: unit(@string, @u);
+}
+
+.padding-left (@string, @u: px) {
+  padding-left: unit(@string, @u);
+}
+
+.padding-loop(@n: 1, @v: extract(@paddingValues, @n)) when (@n <=length(@paddingValues)) {
+  .f-pt@{v} {
+    .padding-top(extract(@paddingValues, @n));
+  }
+
+  .f-pr@{v} {
+    .padding-right(extract(@paddingValues, @n));
+  }
+
+  .f-pb@{v} {
+    .padding-bottom(extract(@paddingValues, @n));
+  }
+
+  .f-pl@{v} {
+    .padding-left(extract(@paddingValues, @n));
+  }
+
+  .padding-loop((@n + 1));
+}
+
+.padding-loop();
+
+.flex-value (@num) {
+  flex: @num;
+}
+
+.flex-loop(@n: 1, @v: extract(@flexValues, @n)) when (@n <=length(@flexValues)) {
+  .f-df@{v} {
+    .flex-value(extract(@flexValues, @n));
+  }
+
+  .flex-loop((@n + 1));
+}
+
+.flex-loop();
+
+.font-size (@size, @u: px) {
+  font-size: unit(@size, @u);
+}
+
+.font-size-loop(@n: 1, @v: extract(@fontSizeValues, @n)) when (@n <=length(@fontSizeValues)) {
+  .f-fs@{v} {
+    .font-size(extract(@fontSizeValues, @n));
+  }
+
+  .font-size-loop((@n + 1));
+}
+
+.font-size-loop();
+
+.text-indent (@size, @u: em) {
+  text-indent: unit(@size, @u);
+}
+
+.text-indent-loop(@n: 1, @v: extract(@textIndentValues, @n)) when (@n <=length(@textIndentValues)) {
+  .f-ti@{v} {
+    .text-indent(extract(@textIndentValues, @n));
+  }
+
+  .text-indent-loop((@n + 1));
+}
+
+.text-indent-loop();
+
+.font-color (@color) {
+  color: @color;
+}
+
+.font-color-loop(@n: 1, @v: extract(@fontColorValues, @n)) when (@n <=length(@fontColorValues)) {
+  @c: replace(@v, '#', '');
+
+  .s-c@{c} {
+    .font-color(extract(@fontColorValues, @n));
+  }
+
+  .font-color-loop((@n + 1));
+}
+
+.font-color-loop();
+
+.background-color (@color) {
+  background-color: @color;
+}
+
+.background-color-loop(@n: 1, @v: extract(@backgroundColorValues, @n)) when (@n <=length(@backgroundColorValues)) {
+  @c: replace(@v, '#', '');
+
+  .s-bgc@{c} {
+    .background-color(extract(@backgroundColorValues, @n));
+  }
+
+  .background-color-loop((@n + 1));
+}
+
+.background-color-loop();
+
+.border-radius (@radius, @u: px) {
+  border-radius: unit(@radius, @u);
+  -moz-border-radius: unit(@radius, @u);
+  -webkit-border-radius: unit(@radius, @u);
+}
+
+.f-brh {
+  .border-radius(50, %);
+}
+
+.border-radius-loop(@n: 1, @v: extract(@borderRadiusValues, @n)) when (@n <=length(@borderRadiusValues)) {
+  .f-br@{v} {
+    .border-radius(extract(@borderRadiusValues, @n));
+  }
+
+  .border-radius-loop((@n + 1));
+}
+
+.border-radius-loop();
+
+.border-radius-percentage (@radius, @u: %) {
+  border-radius: unit(@radius, @u);
+  -moz-border-radius: unit(@radius, @u);
+  -webkit-border-radius: unit(@radius, @u);
+}
+
+.border-radius-percentage-loop(@n: 1, @v: extract(@borderRadiusPercentageValues, @n)) when (@n <=length(@borderRadiusPercentageValues)) {
+  .f-brp@{v} {
+    .border-radius-percentage(extract(@borderRadiusPercentageValues, @n));
+  }
+
+  .border-radius-loop((@n + 1));
+}
+
+.border-radius-percentage-loop();
+
+.width (@width, @u: px) {
+  width: unit(@width, @u);
+}
+
+.min-width (@width, @u: px) {
+  min-width: unit(@width, @u);
+}
+
+.width-loop(@n: 1, @v: extract(@widthValues, @n)) when (@n <=length(@widthValues)) {
+  .g-w@{v} {
+    .width(extract(@widthValues, @n));
+  }
+
+  .g-mw@{v} {
+    .min-width(extract(@widthValues, @n));
+  }
+
+  .width-loop((@n + 1));
+}
+
+.width-loop();
+
+.width-percentage (@width, @u: %) {
+  width: unit(@width, @u);
+}
+
+.width-percentage-loop(@n: 1, @v: extract(@widthPercentageValues, @n)) when (@n <=length(@widthPercentageValues)) {
+  .g-wp@{v} {
+    .width-percentage(extract(@widthPercentageValues, @n));
+  }
+
+  .width-percentage-loop((@n + 1));
+}
+
+.width-percentage-loop();
+
+.height (@height, @u: px) {
+  height: unit(@height, @u);
+}
+
+.min-height (@height, @u: px) {
+  min-height: unit(@height, @u);
+}
+
+.height-loop(@n: 1, @v: extract(@heightValues, @n)) when (@n <=length(@heightValues)) {
+  .g-h@{v} {
+    .height(extract(@heightValues, @n));
+  }
+
+  .g-mh@{v} {
+    .min-height(extract(@heightValues, @n));
+  }
+
+  .height-loop((@n + 1));
+}
+
+.height-loop();
+
+.height-percentage (@height, @u: %) {
+  height: unit(@height, @u);
+}
+
+.min-height-percentage (@height, @u: %) {
+  min-height: unit(@height, @u);
+}
+
+.height-percentage-loop(@n: 1, @v: extract(@heightPercentageValues, @n)) when (@n <=length(@heightPercentageValues)) {
+  .g-hp@{v} {
+    .height-percentage(extract(@heightPercentageValues, @n));
+  }
+
+  .g-mhp@{v} {
+    .min-height-percentage(extract(@heightPercentageValues, @n));
+  }
+
+  .height-percentage-loop((@n + 1));
+}
+
+.height-percentage-loop();
+
+.line-height (@lineHeight, @u: px) {
+  line-height: unit(@lineHeight, @u);
+}
+
+.line-height-loop(@n: 1, @v: extract(@lineHeightValues, @n)) when (@n <=length(@lineHeightValues)) {
+  .f-lh@{v} {
+    .line-height(extract(@lineHeightValues, @n));
+  }
+
+  .line-height-loop((@n + 1));
+}
+
+.line-height-loop();
+
+.text-shadow (@string) {
+  text-shadow: @string;
+}
+
+.text-shadow-loop(@n: 1) when (@n <=length(@textShadowValues)) {
+  .f-ts@{n} {
+    .text-shadow(e(extract(@textShadowValues, @n)));
+  }
+
+  .text-shadow-loop((@n + 1));
+}
+
+.text-shadow-loop();
+
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow: @string;
+  box-shadow: @string;
+}
+
+.box-shadow-loop(@n: 1) when (@n <=length(@boxShadowValues)) {
+  .f-bs@{n} {
+    .box-shadow(e(extract(@boxShadowValues, @n)));
+  }
+
+  .box-shadow-loop((@n + 1));
+}
+
+.box-shadow-loop();
+
+.opacity (@opacity) {
+  @tempOpacity: @opacity;
+  -webkit-opacity: @opacity/100;
+  -moz-opacity: @opacity/100;
+  opacity: @opacity/100;
+  filter: alpha(opacity=@tempOpacity);
+}
+
+.opacity-loop(@n: 1, @v: extract(@opacityValues, @n)) when (@n <=length(@opacityValues)) {
+  .f-o@{v} {
+    .opacity(extract(@opacityValues, @n));
+  }
+
+  .opacity-loop((@n + 1));
+}
+
+.opacity-loop();
+
+.scale (@scale) {
+  -webkit-transform: scale(@scale);
+  -moz-transform: scale(@scale);
+  -ms-transform: scale(@scale);
+  -o-transform: scale(@scale);
+  transform: scale(@scale);
+}
+
+.scale-loop(@n: 1) when (@n <=length(@scaleValues)) {
+  .f-scale@{n} {
+    .scale(e(extract(@scaleValues, @n)));
+  }
+
+  .scale-loop((@n + 1));
+}
+
+.scale-loop();
+
+.rotate (@deg) {
+  -webkit-transform: rotate(unit(@deg, deg));
+  -moz-transform: rotate(unit(@deg, deg));
+  -ms-transform: rotate(unit(@deg, deg));
+  -o-transform: rotate(unit(@deg, deg));
+  transform: rotate(unit(@deg, deg));
+}
+
+.rotate-loop(@n: 1) when (@n <=length(@rotateValues)) {
+  .f-rotate@{n} {
+    .rotate(extract(@rotateValues, @n));
+  }
+
+  .rotate-loop((@n + 1));
+}
+
+.rotate-loop();

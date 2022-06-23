@@ -1,0 +1,56 @@
+.ins-progress {
+  background: var(--loading-bar-bg) !important;
+}
+
+.van-toast {
+  z-index: 99999 !important;
+}
+
+.screen-full {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+}
+
+.screen-full.rotate {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 400px) rotate(-90deg);
+}
+
+.screen-wrap {
+  background: #fff;
+}
+
+i.fullscreen {
+  background: url(../../img/util/full-screen.svg) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.title-icon-wrap {
+  padding: 15px;
+  align-items: center;
+}
+
+.table-wrap {
+  padding: 8px;
+}
+
+.f-bt20 {
+  border-top: 20px solid #eae5e5;
+}
+
+/*禁止长按选中文本*/
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
